@@ -1,10 +1,15 @@
-package com.database;
+package com.ecommerce;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.Scanner;
 
 public class Main {
 	
 	public static void main(String[] args) {
+		MakeConnection m=new MakeConnection();
+		Connection con = m.getConnection();
+		PreparedStatement stmt =null;
 		
 		System.out.println();
 		System.out.println("      .................................. <{ W E L L C O M E }> ...................................");
@@ -73,7 +78,7 @@ public class Main {
 		System.out.println("                                    <{ Want to Buy (Enter Product Code)}>");
 		
 		int code = sc.nextInt();
-		u.buyProduct(code, name);
+		u.buyProduct(code,name);
 		System.out.println();
 		
 		System.out.println("                          <{ Add More (Press 1) }>          <{ Go to Cart (Press 2) }>");
@@ -84,6 +89,8 @@ public class Main {
 				u.addMore(name);
 			}while(u.code2 == 1);
 			
+		}else if(code1 !=2) {
+			u.invalid();
 		}
 		
 		System.out.println();
@@ -98,7 +105,19 @@ public class Main {
 		if(order==1) {
 			System.out.println();
 			System.out.println();
+			u.OrderPlace(name);
 		   System.out.println("                                         Order Place Successfully ! ! !");
+		   
+		   
+		   
+		  
+		   
+		}else if (order==2) {
+			System.out.println();
+			System.out.println();
+		   System.out.println("                                         Order Cancel Successfully ! ! !");
+		}else {
+			u.invalid();
 		}
 		
 		   System.out.println();

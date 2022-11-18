@@ -1,4 +1,4 @@
-package com.database;
+package com.ecommerce;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

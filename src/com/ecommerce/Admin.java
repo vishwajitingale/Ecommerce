@@ -1,4 +1,4 @@
-package com.database;
+package com.ecommerce;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -86,7 +86,7 @@ public class Admin {
 		String name2 = sc.next();
 		
 		System.out.println();
-		System.out.println("..................................... <{ Order History of ("+name2+") }> .......................................");
+		System.out.println(" ..................................... <{ Order History of ("+name2+") }> .......................................");
 		System.out.println();
 		
 		try {
